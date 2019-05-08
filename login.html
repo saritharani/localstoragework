@@ -1,0 +1,40 @@
+<html>
+<title>login</title>
+
+<head></head>
+
+<body>
+    <center>
+        <form>
+            <h2>Login Page</h2>
+            Username&nbsp;&nbsp;<input type="text" id="email" required />
+            <span<br>
+                Password&nbsp;&nbsp; <input type="password" id="password" required><br><br>
+                <input type="submit" onclick="validateLogin()" id="submit" />
+        </form>
+    </center>
+    <script type="text/javascript">
+        function validateLogin() {
+            event.preventDefault();
+            var loginemail = document.getElementById('email').value;
+            var loginpwd = document.getElementById('password').value;
+            console.log(loginemail);
+            console.log(loginpwd);
+            var px = JSON.parse(localStorage.getItem('ar.em'));
+          //you are calling entire string 
+          //  var px = JSON.parse(localStorage.getItem('ar'));
+            console.log(px.ps);
+            // if (loginemail==em&&loginpwd == px.ps) if email and pwd both can match,then do something 
+            if (loginpwd == px.ps) {
+                alert("Logged in successfully");
+                //window.location="home.html";
+            }
+            else {
+                alert("try again....something wrong");
+            }
+
+        }
+    </script>
+</body>
+
+</html>

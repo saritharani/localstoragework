@@ -1,0 +1,37 @@
+<html>
+<title>registerform</title>
+
+<body>
+    <form>
+        <h2>Registraion form</h2>
+        Enter your Name<input type="text" id="username" required /><br>
+        select your password<input type="password" id="password" required /><br>
+        enter emailID<input type="email" id="email" required /><br>
+        Enter your message<input type="textarea" id="message" width="10" height="5" required /><br><br>
+        <input type="submit" onclick="store()" id="submit">
+        <!--<input type="reset" onclick="" id="reset">-->
+        
+    </form>
+
+    <script>
+        function store() {
+            event.preventDefault();
+        
+            var regInputUser = document.getElementById('username').value;
+            //window.localStorage.setItem("regInputUser","username");
+            console.log(regInputUser);
+            var regInputPwd = document.getElementById('password').value;
+            //window.localStorage.setItem("username", "regInputUser");
+            var regInputEmail = document.getElementById('email').value;
+            //window.localStorage.setItem("username", "regInputUser");
+            var regInputMsg = document.getElementById('message').value;
+            //window.localStorage.setItem("username", "regInputUser");
+            var ar = { 'user': regInputUser, 'ps': regInputPwd, 'em': regInputEmail, 'msg': regInputMsg };
+            localStorage.setItem('ar', JSON.stringify(ar));
+            window.location="login.html";
+
+        }
+    </script>
+</body>
+
+</html>
